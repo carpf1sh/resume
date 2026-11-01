@@ -119,6 +119,47 @@ h2 { font-size: 1.4rem; margin: 0 0 16px; padding-bottom: 6px; border-bottom: 2p
 .card h3 { margin: 0; font-size: 1rem; }
 .card p { margin: 6px 0 0; }
 
+/* how-it-works.html */
+.crumb { margin: 0 0 12px; font-size: 0.92rem; }
+.crumb a { text-decoration: none; }
+.explainer main p, .explainer main li, .explainer main dd { max-width: 75ch; }
+code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; font-size: 0.88em; background: var(--tag); border-radius: 4px; padding: 1px 5px; }
+.stats { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.stats li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.stats strong { display: block; font-size: 1.6rem; line-height: 1.1; color: var(--accent); letter-spacing: -0.01em; }
+.stats span { color: var(--muted); font-size: 0.88rem; }
+.layers { display: grid; gap: 12px; }
+.layer { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 14px 16px; }
+.layer h3 { margin: 0 0 6px; font-size: 1.05rem; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.layer p { margin: 0 0 6px; }
+.layer ul { margin: 0; padding-left: 20px; }
+.layer li + li { margin-top: 4px; }
+.badge { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 2px 7px; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+.step:not(:last-child)::after {
+  content: "↓"; position: absolute; left: 50%; bottom: -22px; transform: translateX(-50%);
+  color: var(--muted); font-size: 1rem; line-height: 22px;
+}
+.step p { margin: 0; }
+.step-k { font-weight: 700; margin-bottom: 2px !important; }
+.step-core { border: 2px solid var(--accent); background: var(--accent-soft); }
+.step-fork { background: none; border: 0; padding: 0; }
+.fork { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.fork > div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+.fork p { margin: 0; }
+.flow + .note { margin-top: 16px; }
+.grid2 { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.example { margin: 20px 0 0; }
+.example figcaption { color: var(--muted); font-size: 0.88rem; margin-bottom: 6px; }
+.example pre { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font-size: 0.85rem; line-height: 1.5; }
+.example pre code { background: none; padding: 0; font-size: inherit; }
+.checks { padding-left: 20px; }
+.checks li + li, .phases li + li { margin-top: 8px; }
+.phases { padding-left: 22px; }
+.cadence dt { font-weight: 700; margin-top: 12px; }
+.cadence dd { margin: 2px 0 0; }
+
 .foot { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 16px; padding-bottom: 32px; }
 
 @media (max-width: 560px) {

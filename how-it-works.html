@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How This Site Works · Brandon Carp</title>
+  <meta name="description" content="How Brandon Carp built and maintains an AI-assisted, version-controlled career system with Claude Code: the design, the guardrails, and the workflow.">
+  <link rel="canonical" href="https://carpf1sh.github.io/resume/how-it-works.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How This Site Works · Brandon Carp">
+  <meta property="og:description" content="An AI-assisted career system where AI proposes, code verifies, and a human approves.">
+  <meta property="og:url" content="https://carpf1sh.github.io/resume/how-it-works.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="explainer">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="./">← Brandon Carp</a></p>
+    <h1>How this site works</h1>
+    <p class="headline">An AI-assisted career system, built with Claude Code</p>
+    <p class="summary">
+      This portfolio, and every resume I send, comes from one private, version-controlled bank of career evidence.
+      AI agents interview me, draft, and tailor. Deterministic code checks their work. I approve anything that leaves the repo.
+      This page covers how it works, how I built it, and how I keep it accurate.
+    </p>
+    <button class="theme" type="button" aria-label="Toggle dark mode" hidden>◐</button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <ul class="stats" aria-label="At a glance">
+    <li><strong>66</strong><span>accomplishments in the bank</span></li>
+    <li><strong>14</strong><span>approved for this site</span></li>
+    <li><strong>20</strong><span>past resumes and cover letters ingested</span></li>
+    <li><strong>5</strong><span>Claude Code skills</span></li>
+    <li><strong>2 days</strong><span>from empty folder to live site</span></li>
+  </ul>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#problem">The problem</a>
+    <a href="#design">The design</a>
+    <a href="#flow">How it flows</a>
+    <a href="#guardrails">Guardrails</a>
+    <a href="#security">Repo security</a>
+    <a href="#built">How I built it</a>
+    <a href="#maintain">How I maintain it</a>
+    <a href="#lessons">Takeaways</a>
+  </nav>
+
+  <section id="problem" aria-labelledby="problem-h">
+    <h2 id="problem-h">The problem</h2>
+    <p>
+      After nearly a decade in security, my career history lived in about twenty resume and cover-letter files.
+      Each tailored copy was a fork. The best phrasing of a win was often in a file from years ago, the numbers didn't always agree,
+      and nothing told me which strengths I had evidence for and which I didn't.
+    </p>
+    <p>
+      Security work adds a second problem: much of it is confidential. What I can say in a resume to a hiring manager
+      is not what I can say on a public web page, so every claim needs a public version and a private one, and nothing private can slip through.
+    </p>
+  </section>
+
+  <section id="design" aria-labelledby="design-h">
+    <h2 id="design-h">The design: AI proposes, code verifies, I approve</h2>
+    <p>
+      The system splits the work by what each part is good at. Language models handle judgment over messy text.
+      Plain Python handles every rule that must never be broken. I make every decision that matters.
+    </p>
+    <div class="layers">
+      <article class="layer">
+        <h3><span class="badge">Judgment</span> Claude Code skills</h3>
+        <p>Repeatable agent workflows checked into the repo, each with written instructions:</p>
+        <ul>
+          <li><code>/ingest</code> reads past resumes and builds the bank, merging the same win phrased five ways into one entry</li>
+          <li><code>/interview</code> asks me one question at a time to fill gaps, pushing for scope and measurable results</li>
+          <li><code>/tailor</code> maps a job posting's requirements to evidence and drafts a cited resume</li>
+          <li><code>/bank-review</code> drafts sanitized public text for items I choose to publish</li>
+          <li><code>/publish</code> previews the site and shows exactly what changes before it goes live</li>
+        </ul>
+      </article>
+      <article class="layer">
+        <h3><span class="badge">Rules</span> The <code>rmgr</code> CLI</h3>
+        <p>Deterministic Python with no AI in it. The agents call it; they can't argue with it.</p>
+        <ul>
+          <li>Schema validation of every file (Pydantic models, exported as JSON Schema)</li>
+          <li>Gap analysis that ranks weak spots in the bank</li>
+          <li>Resume rendering to Word, PDF, Markdown and plain text</li>
+          <li>An ATS check: text round-trip, section order, two-page limit, keyword coverage</li>
+          <li>A leak guard that fails the site build if anything private appears</li>
+        </ul>
+      </article>
+      <article class="layer">
+        <h3><span class="badge">Decisions</span> Me</h3>
+        <ul>
+          <li>I'm the only source of new facts. Agents record what I say, never what they infer.</li>
+          <li>I approve every public item, one at a time.</li>
+          <li>I confirm every estimated metric before it counts as verified.</li>
+          <li>I review the diff of every session before it's committed.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="flow" aria-labelledby="flow-h">
+    <h2 id="flow-h">How it flows</h2>
+    <ol class="flow">
+      <li class="step">
+        <p class="step-k">Sources</p>
+        <p>Past resumes, cover letters, a LinkedIn export, and interview transcripts. Text is extracted so analysis is reproducible.</p>
+      </li>
+      <li class="step">
+        <p class="step-k"><code>/ingest</code> + <code>/interview</code></p>
+        <p>Agents turn sources and my answers into structured entries, citing where each one came from.</p>
+      </li>
+      <li class="step step-core">
+        <p class="step-k">The bank</p>
+        <p>One YAML file per accomplishment: the full story, metrics, skills, a visibility level, and its sources. Validated on every change.</p>
+      </li>
+      <li class="step step-fork">
+        <div class="fork">
+          <div>
+            <p class="step-k"><code>/tailor</code> → resume</p>
+            <p>A posting goes in; a two-page, ATS-checked resume comes out, with every bullet citing the bank entries behind it.</p>
+          </div>
+          <div>
+            <p class="step-k"><code>/bank-review</code> → this site</p>
+            <p>Approved items only, rendered through the leak guard and deployed by GitHub Actions to a separate public repo.</p>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <p class="note">A job-finder seam is already in place: anything that drops a posting file of the right shape into an inbox folder can feed <code>/tailor</code>, and the application log tells it which jobs I've already applied to.</p>
+  </section>
+
+  <section id="guardrails" aria-labelledby="guardrails-h">
+    <h2 id="guardrails-h">Guardrails: keeping the AI honest</h2>
+    <p>
+      The biggest risk in using AI for a resume is that it writes something plausible and untrue.
+      I treated the agents the way I'd treat any powerful, untrusted contributor: clear rules, least privilege, and checks they can't skip.
+    </p>
+    <div class="cards grid2">
+      <article class="card">
+        <h3>Never invent</h3>
+        <p>The project rules forbid made-up metrics, titles, dates, tools, or scope. An unknown value is left empty and becomes a question for my next interview. Estimates I give are stored as unverified until I confirm them.</p>
+      </article>
+      <article class="card">
+        <h3>Every bullet cites its evidence</h3>
+        <p>A tailored resume may rephrase a bank entry to match a posting's wording, but each bullet lists the entry ids it came from. The validator rejects a bullet with no source, or one that draws on a private item.</p>
+      </article>
+      <article class="card">
+        <h3>Gaps are reported, not papered over</h3>
+        <p>When a posting asks for something the bank has no evidence for, <code>/tailor</code> says so plainly and offers a short targeted interview. Only my answers can close a gap.</p>
+      </article>
+      <article class="card">
+        <h3>Three visibility levels</h3>
+        <p>Every item is <em>public</em> (this site, through a separately written public line), <em>resume</em> (tailored resumes only), or <em>private</em> (my reference only, never in any output).</p>
+      </article>
+      <article class="card">
+        <h3>A leak guard on every build</h3>
+        <p>After rendering, the build scans every output file, including the PDF's extracted text, for contact details, non-public item ids, resume bullets, full stories, and anonymized employer names. One hit fails the build and deletes the output.</p>
+      </article>
+      <article class="card">
+        <h3>Confidentiality by default</h3>
+        <p>Public text describes principles, not specific controls, and leaves out internal names and "before" numbers that would reveal a weakness in an employer's program. The agents are told to ask about visibility whenever an answer touches anything sensitive.</p>
+      </article>
+    </div>
+    <figure class="example">
+      <figcaption>What a bank entry looks like (an illustrative example, not a real one)</figcaption>
+<pre><code>id: acme-2021-cspm-rollout
+role_id: acme-sr-security-architect
+title: Multi-cloud CSPM rollout
+star:
+  situation: ...
+  task: ...
+  action: ...
+  result: ...
+metrics:
+  - value: 4200
+    unit: cloud accounts
+    description: brought under continuous posture monitoring
+    verified: true
+skills: [CSPM, AWS, Azure, Terraform]
+domains: [cloud-security, security-architecture]
+visibility: resume
+public_text: Led a multi-cloud posture program across thousands of accounts.
+resume_bullets:
+  - Rolled out CSPM across 4,200 AWS and Azure accounts ...
+sources: [sources/resumes/2022-resume.docx, interviews/2026-11-05-gaps.md]
+strength: 4</code></pre>
+    </figure>
+  </section>
+
+  <section id="security" aria-labelledby="security-h">
+    <h2 id="security-h">Securing the repo itself</h2>
+    <p>A system that holds my contact details and confidential work history should be built like any other sensitive system.</p>
+    <ul class="checks">
+      <li><strong>Separation:</strong> the source of truth lives in a private repo; the public repo only ever receives built, leak-checked output.</li>
+      <li><strong>Least-privilege deploys:</strong> publishing uses an SSH deploy key scoped to the one public repo, verified against GitHub's published host key, instead of a personal access token.</li>
+      <li><strong>Secret scanning:</strong> gitleaks runs as a pre-commit hook and in CI over the full history.</li>
+      <li><strong>Supply chain:</strong> every GitHub Action is pinned to a full commit SHA, only an allowlisted set of actions may run, dependencies are locked and audited with <code>pip-audit</code>, workflows are linted with <code>zizmor</code>, and Dependabot proposes updates weekly.</li>
+      <li><strong>Public repo protection:</strong> secret scanning, push protection, and a ruleset that blocks force-pushes and deletion of <code>main</code>.</li>
+    </ul>
+  </section>
+
+  <section id="built" aria-labelledby="built-h">
+    <h2 id="built-h">How I built it</h2>
+    <p>
+      I built this with <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>, Anthropic's agentic coding tool.
+      I set the architecture, the rules, and the security requirements; Claude Code did most of the implementation, and I reviewed each change as it landed.
+    </p>
+    <ol class="phases">
+      <li><strong>Requirements interview.</strong> Before any code, Claude interviewed me on the decisions that mattered: one YAML file per accomplishment, a private source repo plus a public output repo, per-item visibility, and "rephrase but never invent." The answers became a written, phased build plan.</li>
+      <li><strong>Schema and validation first.</strong> The data model, a validation CLI, tests, and CI came before any AI workflow, so every later step had something strict to check against.</li>
+      <li><strong>Ingest.</strong> One session read about twenty past resumes and cover letters, built the role timeline, merged duplicates, and wrote a report of conflicts and missing numbers.</li>
+      <li><strong>Interviews and gap analysis.</strong> A ranked gap report drives each interview. The first session added a dozen new entries and strengthened seven more.</li>
+      <li><strong>Tailored resumes.</strong> ATS-safe rendering (single column, standard headings, text-based PDF) and an automated check of the output.</li>
+      <li><strong>Security hardening, then this site.</strong> CI hardening landed before anything was public. The portfolio, its leak guard, and the publish workflow followed.</li>
+      <li><strong>Application log and job-finder seam.</strong> A tracked stage for every application, plus a documented contract for future automation.</li>
+    </ol>
+    <p>
+      Each phase was its own branch and pull request with tests and green CI. Each session ended by updating the project's instruction file with what changed and what to do next,
+      so the next session, a fresh agent with no memory, picked up exactly where the last one stopped.
+    </p>
+  </section>
+
+  <section id="maintain" aria-labelledby="maintain-h">
+    <h2 id="maintain-h">How I maintain it</h2>
+    <dl class="cadence">
+      <dt>For each job</dt>
+      <dd><code>/tailor</code> the posting, review the analysis and gap list, build and ATS-check the resume, then track the application's stage as it moves.</dd>
+      <dt>Every few months</dt>
+      <dd>A check-in interview to capture recent work while the details are fresh, and a gap interview when the gap report shows weak areas.</dd>
+      <dt>Quarterly</dt>
+      <dd><code>/bank-review</code> to merge duplicates, refresh stale numbers, and decide whether anything new should go public.</dd>
+      <dt>Publishing</dt>
+      <dd>Merging a change to <code>main</code> rebuilds this site in GitHub Actions. The build fails closed if the leak guard finds anything.</dd>
+    </dl>
+    <p>
+      Every working session is one commit with a prefix for its area (<code>bank:</code>, <code>apply:</code>, <code>site:</code>, <code>tools:</code>),
+      so the history of the data folder reads as a history of my career.
+    </p>
+  </section>
+
+  <section id="lessons" aria-labelledby="lessons-h">
+    <h2 id="lessons-h">Takeaways</h2>
+    <ul class="checks">
+      <li><strong>Put the non-negotiables in code, not in the prompt.</strong> Instructions shape what an agent tries to do; validators and build gates decide what it can actually ship.</li>
+      <li><strong>Make provenance mandatory.</strong> When every claim must cite its source, fabrication becomes a validation error instead of a judgment call.</li>
+      <li><strong>Keep a human on the outward-facing actions.</strong> Agents draft freely inside the repo; publishing, committing, and anything public waits for my explicit approval.</li>
+      <li><strong>Write the context down.</strong> Rules, conventions, and handoff notes in the repo make each new session productive immediately, and make the agents' behavior reviewable.</li>
+    </ul>
+    <p>These are the same principles I'd bring to any team adopting agentic AI: clear contracts, least privilege, defense in depth, and auditable output.</p>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p><a href="./">← Back to the portfolio</a> · <a href="https://www.linkedin.com/in/brandoncarp" rel="me noopener">LinkedIn</a> · <a href="https://github.com/carpf1sh" rel="me noopener">GitHub</a></p>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
