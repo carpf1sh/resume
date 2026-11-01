@@ -128,7 +128,7 @@ h2 { font-size: 1.4rem; margin: 0 0 16px; padding-bottom: 6px; border-bottom: 2p
 
 @media print {
   :root { --bg: #fff; --surface: #fff; --text: #000; --muted: #444; --line: #ccc; --accent: #000; --accent-soft: #eee; --tag: #eee; }
-  .filters, .toc, .theme, .skip { display: none !important; }
+  .filters, .toc, .theme, .skip, .resume-pdf { display: none !important; }
   .filtered-out { display: block !important; }
   .hero { padding: 0 0 12px; }
   section { margin: 20px 0; break-inside: auto; }
