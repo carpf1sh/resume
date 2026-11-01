@@ -12,13 +12,23 @@
   <meta property="og:url" content="https://carpf1sh.github.io/resume/how-it-works.html">
   <meta name="twitter:card" content="summary">
   <meta name="color-scheme" content="light dark">
+  <link rel="preload" href="fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="explainer">
 <a class="skip" href="#main">Skip to content</a>
-<header class="hero">
+<header class="bar">
   <div class="wrap">
-    <p class="crumb"><a href="./">← Brandon Carp</a></p>
+    <a class="bar-id" href="./"><b>brandon-carp</b> / how-it-works</a>
+    <nav aria-label="Site">
+      <a href="./">← portfolio</a>
+      <button class="theme" type="button" aria-label="Toggle dark mode" hidden>◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="hero">
     <h1>How this site works</h1>
     <p class="headline">An AI-assisted career system, built with Claude Code</p>
     <p class="summary">
@@ -26,11 +36,8 @@
       AI agents interview me, draft, and tailor. Deterministic code checks their work. I approve anything that leaves the repo.
       This page covers how it works, how I built it, and how I keep it accurate.
     </p>
-    <button class="theme" type="button" aria-label="Toggle dark mode" hidden>◐</button>
   </div>
-</header>
 
-<main id="main" class="wrap">
   <ul class="stats" aria-label="At a glance">
     <li><strong>66</strong><span>accomplishments in the bank</span></li>
     <li><strong>14</strong><span>approved for this site</span></li>

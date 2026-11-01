@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://carpf1sh.github.io/resume/">
   <meta name="twitter:card" content="summary">
   <meta name="color-scheme" content="light dark">
+  <link rel="preload" href="fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
 {
@@ -91,28 +92,56 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="hero">
+<header class="bar">
   <div class="wrap">
-    <h1>Brandon Carp</h1>
-<p class="headline">Senior Staff Security Architect</p><p class="location">New York metro</p><p class="summary">Security architect on Diligent&#39;s Security Architecture and Engineering team, focused on cloud and AI security. I lead security architecture reviews, including reviews of enterprise AI platforms, and previously ran cloud security, threat detection, and incident response in Diligent&#39;s security operations. Earlier, I built security analytics and cyber risk metrics programs at Indeed and OCC.</p>    <nav class="links" aria-label="Profiles and resume">
-<a href="https://www.linkedin.com/in/brandoncarp" rel="me noopener">LinkedIn</a><a href="https://github.com/carpf1sh" rel="me noopener">GitHub</a><a class="resume-pdf" href="Brandon-Carp-Resume.pdf" download type="application/pdf">Resume (PDF)</a>    </nav>
-    <button class="theme" type="button" aria-label="Toggle dark mode" hidden>◐</button>
+    <a class="bar-id" href="./"><b>brandon-carp</b> / portfolio</a>
+    <nav aria-label="Sections">
+      <a href="#experience">experience</a>
+<a href="#skills">skills</a><a href="#certifications">certifications</a><a href="#education">education</a>      <button class="theme" type="button" aria-label="Toggle dark mode" hidden>◐</button>
+    </nav>
   </div>
 </header>
 
 <main id="main" class="wrap">
-  <nav class="toc" aria-label="Sections">
-    <a href="#experience">Experience</a>
-<a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#education">Education</a>  </nav>
+  <div class="hero">
+    <h1>Brandon Carp</h1>
+    <p class="headline">Senior Staff Security Architect · <span class="location">New York metro</span></p>
+<p class="summary">Security architect on Diligent&#39;s Security Architecture and Engineering team, focused on cloud and AI security. I lead security architecture reviews, including reviews of enterprise AI platforms, and previously ran cloud security, threat detection, and incident response in Diligent&#39;s security operations. Earlier, I built security analytics and cyber risk metrics programs at Indeed and OCC.</p>    <nav class="links" aria-label="Profiles and resume">
+<a href="https://www.linkedin.com/in/brandoncarp" rel="me noopener">LinkedIn</a><a href="https://github.com/carpf1sh" rel="me noopener">GitHub</a><a class="resume-pdf" href="Brandon-Carp-Resume.pdf" download type="application/pdf">Resume (PDF)</a>    </nav>
+    <ul class="domains" aria-label="Highlights by domain">
+      <li><button type="button" class="dtile d-security-architecture" data-kind="domain" data-value="security-architecture" aria-pressed="false">
+        <b>2</b><span>Security Architecture</span><small>highlights</small>
+      </button></li>
+      <li><button type="button" class="dtile d-cloud-security" data-kind="domain" data-value="cloud-security" aria-pressed="false">
+        <b>5</b><span>Cloud Security</span><small>highlights</small>
+      </button></li>
+      <li><button type="button" class="dtile d-ai-security" data-kind="domain" data-value="ai-security" aria-pressed="false">
+        <b>4</b><span>AI Security</span><small>highlights</small>
+      </button></li>
+      <li><button type="button" class="dtile d-grc" data-kind="domain" data-value="grc" aria-pressed="false">
+        <b>5</b><span>GRC</span><small>highlights</small>
+      </button></li>
+      <li><button type="button" class="dtile d-detection-response" data-kind="domain" data-value="detection-response" aria-pressed="false">
+        <b>5</b><span>Detection &amp; Response</span><small>highlights</small>
+      </button></li>
+      <li><button type="button" class="dtile d-leadership" data-kind="domain" data-value="leadership" aria-pressed="false">
+        <b>3</b><span>Leadership</span><small>highlights</small>
+      </button></li>
+    </ul>
+  </div>
 
   <section id="experience" aria-labelledby="experience-h">
-    <h2 id="experience-h">Experience</h2>
+    <div class="sec-head">
+      <h2 id="experience-h">Experience</h2>
+      <span class="count">14 highlights · 8 roles</span>
+    </div>
     <div class="filters" hidden>
-      <div class="chips" role="group" aria-label="Filter by domain">
-        <button type="button" class="chip" data-kind="domain" data-value="" aria-pressed="true">All domains</button>
-<button type="button" class="chip" data-kind="domain" data-value="security-architecture" aria-pressed="false">Security Architecture</button><button type="button" class="chip" data-kind="domain" data-value="cloud-security" aria-pressed="false">Cloud Security</button><button type="button" class="chip" data-kind="domain" data-value="ai-security" aria-pressed="false">AI Security</button><button type="button" class="chip" data-kind="domain" data-value="grc" aria-pressed="false">GRC</button><button type="button" class="chip" data-kind="domain" data-value="detection-response" aria-pressed="false">Detection &amp; Response</button><button type="button" class="chip" data-kind="domain" data-value="leadership" aria-pressed="false">Leadership</button>      </div>
+      <div class="query">
+        <label for="q">filter</label>
+        <input id="q" type="search" placeholder="type a skill or keyword: aws, panther, ai" autocomplete="off" spellcheck="false">
+        <kbd aria-hidden="true">/</kbd>
+      </div>
       <div class="chips skills" role="group" aria-label="Filter by skill">
-        <button type="button" class="chip" data-kind="skill" data-value="" aria-pressed="true">All skills</button>
 <button type="button" class="chip" data-kind="skill" data-value="aws" aria-pressed="false">AWS</button><button type="button" class="chip" data-kind="skill" data-value="siem" aria-pressed="false">SIEM</button><button type="button" class="chip" data-kind="skill" data-value="python" aria-pressed="false">Python</button><button type="button" class="chip" data-kind="skill" data-value="risk-assessment" aria-pressed="false">Risk Assessment</button><button type="button" class="chip" data-kind="skill" data-value="security-metrics" aria-pressed="false">Security Metrics</button><button type="button" class="chip" data-kind="skill" data-value="threat-detection" aria-pressed="false">Threat Detection</button><button type="button" class="chip" data-kind="skill" data-value="ai-governance" aria-pressed="false">AI Governance</button><button type="button" class="chip" data-kind="skill" data-value="azure" aria-pressed="false">Azure</button><button type="button" class="chip" data-kind="skill" data-value="gcp" aria-pressed="false">GCP</button><button type="button" class="chip" data-kind="skill" data-value="llm-security" aria-pressed="false">LLM Security</button><button type="button" class="chip" data-kind="skill" data-value="nist-csf" aria-pressed="false">NIST CSF</button><button type="button" class="chip" data-kind="skill" data-value="panther" aria-pressed="false">Panther</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="security-architecture-review" aria-pressed="false">Security Architecture Review</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="vulnerability-management" aria-pressed="false">Vulnerability Management</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="wiz" aria-pressed="false">Wiz</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="ai-agents" aria-pressed="false">AI Agents</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="alteryx" aria-pressed="false">Alteryx</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="claude-code" aria-pressed="false">Claude Code</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="cloudtrail" aria-pressed="false">CloudTrail</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="cnapp" aria-pressed="false">CNAPP</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="cspm" aria-pressed="false">CSPM</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="cursor" aria-pressed="false">Cursor</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="cyber-risk-quantification" aria-pressed="false">Cyber Risk Quantification</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="data-analytics" aria-pressed="false">Data Analytics</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="fluentbit" aria-pressed="false">FluentBit</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="guardduty" aria-pressed="false">GuardDuty</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="incident-response" aria-pressed="false">Incident Response</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="lambda" aria-pressed="false">Lambda</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="mcp" aria-pressed="false">MCP</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="mitre-att-ck" aria-pressed="false">MITRE ATT&amp;CK</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="reg-sci" aria-pressed="false">Reg SCI</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="security-strategy" aria-pressed="false">Security Strategy</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="stakeholder-management" aria-pressed="false">Stakeholder Management</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="tableau" aria-pressed="false">Tableau</button><button type="button" class="chip chip-extra" data-kind="skill" data-value="third-party-risk-management" aria-pressed="false">Third-Party Risk Management</button><button type="button" class="chip chip-more" aria-expanded="false">+23 more</button>      </div>
       <p class="filter-status" aria-live="polite"></p>
     </div>
@@ -120,148 +149,149 @@
     <ol class="timeline">
       <li class="role">
         <div class="role-head">
-          <h3>Senior Staff Security Architect</h3>
-          <p class="meta"><span class="employer">Diligent Corporation</span> · <time>Apr 2026 – Present</time></p>
+          <h3>Senior Staff Security Architect <span class="employer">· Diligent Corporation</span></h3>
+          <time>Apr 2026 – Present</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="security-architecture ai-security cloud-security leadership" data-skills="ai-governance aws risk-assessment security-architecture-review stakeholder-management third-party-risk-management">
             <p>Designed and launched a security architecture review process tied into vendor risk, change, and portfolio management, bringing security into major projects early.</p>
             <p class="tags">
-<span class="tag tag-domain">Security Architecture</span><span class="tag tag-domain">AI Security</span><span class="tag tag-domain">Cloud Security</span><span class="tag tag-domain">Leadership</span><span class="tag">AI Governance</span><span class="tag">AWS</span><span class="tag">Risk Assessment</span><span class="tag">Security Architecture Review</span><span class="tag">Stakeholder Management</span><span class="tag">Third-Party Risk Management</span>            </p>
+<span class="pill d-security-architecture">Security Architecture</span><span class="pill d-ai-security">AI Security</span><span class="pill d-cloud-security">Cloud Security</span><span class="pill d-leadership">Leadership</span><span class="tag">AI Governance</span><span class="tag">AWS</span><span class="tag">Risk Assessment</span><span class="tag">Security Architecture Review</span><span class="tag">Stakeholder Management</span><span class="tag">Third-Party Risk Management</span>            </p>
           </li>
           <li class="item" data-domains="ai-security security-architecture cloud-security" data-skills="ai-governance aws llm-security security-architecture-review">
             <p>Lead security reviews of enterprise AI platforms and AI-driven business workflows, assessing system boundaries, data flows, and baseline control adherence.</p>
             <p class="tags">
-<span class="tag tag-domain">AI Security</span><span class="tag tag-domain">Security Architecture</span><span class="tag tag-domain">Cloud Security</span><span class="tag">AI Governance</span><span class="tag">AWS</span><span class="tag">LLM Security</span><span class="tag">Security Architecture Review</span>            </p>
+<span class="pill d-ai-security">AI Security</span><span class="pill d-security-architecture">Security Architecture</span><span class="pill d-cloud-security">Cloud Security</span><span class="tag">AI Governance</span><span class="tag">AWS</span><span class="tag">LLM Security</span><span class="tag">Security Architecture Review</span>            </p>
           </li>
           <li class="item" data-domains="ai-security cloud-security" data-skills="ai-agents vulnerability-management wiz">
             <p>Led the design of AI agents that triage critical cloud security findings, route remediation to owning teams, and assess exposure to new threat advisories.</p>
             <p class="tags">
-<span class="tag tag-domain">AI Security</span><span class="tag tag-domain">Cloud Security</span><span class="tag">AI Agents</span><span class="tag">Vulnerability Management</span><span class="tag">Wiz</span>            </p>
+<span class="pill d-ai-security">AI Security</span><span class="pill d-cloud-security">Cloud Security</span><span class="tag">AI Agents</span><span class="tag">Vulnerability Management</span><span class="tag">Wiz</span>            </p>
           </li>
         </ul>
       </li>
       <li class="role">
         <div class="role-head">
-          <h3>Manager, Security Operations</h3>
-          <p class="meta"><span class="employer">Diligent Corporation</span> · <time>Apr 2024 – Mar 2026</time></p>
+          <h3>Manager, Security Operations <span class="employer">· Diligent Corporation</span></h3>
+          <time>Apr 2024 – Mar 2026</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="cloud-security" data-skills="aws azure cnapp cspm gcp vulnerability-management wiz">
             <p>Rolled out Wiz CNAPP across 600+ AWS accounts plus Azure and GCP, giving security and engineering teams prioritized visibility into cloud risk.</p>
             <p class="tags">
-<span class="tag tag-domain">Cloud Security</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">CNAPP</span><span class="tag">CSPM</span><span class="tag">GCP</span><span class="tag">Vulnerability Management</span><span class="tag">Wiz</span>            </p>
+<span class="pill d-cloud-security">Cloud Security</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">CNAPP</span><span class="tag">CSPM</span><span class="tag">GCP</span><span class="tag">Vulnerability Management</span><span class="tag">Wiz</span>            </p>
           </li>
           <li class="item" data-domains="leadership detection-response ai-security" data-skills="claude-code cursor llm-security mcp python">
             <p>Championed AI coding tools across the SOC and led a Model Context Protocol (MCP) integration layer connecting them to core security tools, with security guardrails.</p>
             <p class="tags">
-<span class="tag tag-domain">Leadership</span><span class="tag tag-domain">Detection &amp; Response</span><span class="tag tag-domain">AI Security</span><span class="tag">Claude Code</span><span class="tag">Cursor</span><span class="tag">LLM Security</span><span class="tag">MCP</span><span class="tag">Python</span>            </p>
+<span class="pill d-leadership">Leadership</span><span class="pill d-detection-response">Detection &amp; Response</span><span class="pill d-ai-security">AI Security</span><span class="tag">Claude Code</span><span class="tag">Cursor</span><span class="tag">LLM Security</span><span class="tag">MCP</span><span class="tag">Python</span>            </p>
           </li>
           <li class="item" data-domains="detection-response" data-skills="aws azure gcp incident-response">
             <p>Modernized the security incident response plan and commanded high-profile incidents across on-premises, multi-cloud, and SaaS environments.</p>
             <p class="tags">
-<span class="tag tag-domain">Detection &amp; Response</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">Incident Response</span>            </p>
+<span class="pill d-detection-response">Detection &amp; Response</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">Incident Response</span>            </p>
           </li>
           <li class="item" data-domains="detection-response cloud-security" data-skills="aws cloudtrail guardduty lambda python siem threat-detection">
             <p>Architected global security log pipelines across AWS, Azure, GCP, and on-premises, with Python and AWS-native automation to enrich alerts and drive response.</p>
             <p class="tags">
-<span class="tag tag-domain">Detection &amp; Response</span><span class="tag tag-domain">Cloud Security</span><span class="tag">AWS</span><span class="tag">CloudTrail</span><span class="tag">GuardDuty</span><span class="tag">Lambda</span><span class="tag">Python</span><span class="tag">SIEM</span><span class="tag">Threat Detection</span>            </p>
+<span class="pill d-detection-response">Detection &amp; Response</span><span class="pill d-cloud-security">Cloud Security</span><span class="tag">AWS</span><span class="tag">CloudTrail</span><span class="tag">GuardDuty</span><span class="tag">Lambda</span><span class="tag">Python</span><span class="tag">SIEM</span><span class="tag">Threat Detection</span>            </p>
           </li>
           <li class="item" data-domains="detection-response" data-skills="mitre-att-ck panther siem threat-detection">
             <p>Managed threat detection across an MDR provider and in-house analysts, mapping detection rules to MITRE ATT&amp;CK.</p>
             <p class="tags">
-<span class="tag tag-domain">Detection &amp; Response</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">Panther</span><span class="tag">SIEM</span><span class="tag">Threat Detection</span>            </p>
+<span class="pill d-detection-response">Detection &amp; Response</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">Panther</span><span class="tag">SIEM</span><span class="tag">Threat Detection</span>            </p>
           </li>
         </ul>
       </li>
       <li class="role">
         <div class="role-head">
-          <h3>Senior Security Operations Analyst</h3>
-          <p class="meta"><span class="employer">Diligent Corporation</span> · <time>May 2023 – Apr 2024</time></p>
+          <h3>Senior Security Operations Analyst <span class="employer">· Diligent Corporation</span></h3>
+          <time>May 2023 – Apr 2024</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="detection-response" data-skills="fluentbit panther siem threat-detection">
             <p>Led the migration from on-premises Splunk to the Panther cloud SIEM, re-engineering log collection and reimplementing detection use cases.</p>
             <p class="tags">
-<span class="tag tag-domain">Detection &amp; Response</span><span class="tag">FluentBit</span><span class="tag">Panther</span><span class="tag">SIEM</span><span class="tag">Threat Detection</span>            </p>
+<span class="pill d-detection-response">Detection &amp; Response</span><span class="tag">FluentBit</span><span class="tag">Panther</span><span class="tag">SIEM</span><span class="tag">Threat Detection</span>            </p>
           </li>
         </ul>
       </li>
       <li class="role">
         <div class="role-head">
-          <h3>Senior Security Technical Program Manager, Analytics</h3>
-          <p class="meta"><span class="employer">Indeed</span> · <time>Mar 2022 – Mar 2023</time></p>
+          <h3>Senior Security Technical Program Manager, Analytics <span class="employer">· Indeed</span></h3>
+          <time>Mar 2022 – Mar 2023</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="grc leadership" data-skills="aws data-analytics python security-metrics security-strategy siem">
             <p>Built Indeed&#39;s Security Analytics program from scratch, defining the security data strategy and an analytics mesh for metrics, security BI, and enriched detection.</p>
             <p class="tags">
-<span class="tag tag-domain">GRC</span><span class="tag tag-domain">Leadership</span><span class="tag">AWS</span><span class="tag">Data Analytics</span><span class="tag">Python</span><span class="tag">Security Metrics</span><span class="tag">Security Strategy</span><span class="tag">SIEM</span>            </p>
+<span class="pill d-grc">GRC</span><span class="pill d-leadership">Leadership</span><span class="tag">AWS</span><span class="tag">Data Analytics</span><span class="tag">Python</span><span class="tag">Security Metrics</span><span class="tag">Security Strategy</span><span class="tag">SIEM</span>            </p>
           </li>
         </ul>
       </li>
       <li class="role">
         <div class="role-head">
-          <h3>Associate Principal, Security Governance</h3>
-          <p class="meta"><span class="employer">OCC (Options Clearing Corporation)</span> · <time>Oct 2020 – Mar 2022</time></p>
+          <h3>Associate Principal, Security Governance <span class="employer">· OCC (Options Clearing Corporation)</span></h3>
+          <time>Oct 2020 – Mar 2022</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="grc" data-skills="cyber-risk-quantification risk-assessment">
             <p>Managed implementation of the X-Analytics cyber risk quantification platform, so leadership could weigh cyber risks in financial terms.</p>
             <p class="tags">
-<span class="tag tag-domain">GRC</span><span class="tag">Cyber Risk Quantification</span><span class="tag">Risk Assessment</span>            </p>
+<span class="pill d-grc">GRC</span><span class="tag">Cyber Risk Quantification</span><span class="tag">Risk Assessment</span>            </p>
           </li>
         </ul>
       </li>
       <li class="role">
         <div class="role-head">
-          <h3>Senior Security Governance Analyst, Analytics</h3>
-          <p class="meta"><span class="employer">OCC (Options Clearing Corporation)</span> · <time>Sep 2019 – Oct 2020</time></p>
+          <h3>Senior Security Governance Analyst, Analytics <span class="employer">· OCC (Options Clearing Corporation)</span></h3>
+          <time>Sep 2019 – Oct 2020</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="grc" data-skills="alteryx security-metrics tableau">
             <p>Automated monthly key risk indicator reporting with Tableau and Alteryx, enabling on-demand KRI reporting.</p>
             <p class="tags">
-<span class="tag tag-domain">GRC</span><span class="tag">Alteryx</span><span class="tag">Security Metrics</span><span class="tag">Tableau</span>            </p>
+<span class="pill d-grc">GRC</span><span class="tag">Alteryx</span><span class="tag">Security Metrics</span><span class="tag">Tableau</span>            </p>
           </li>
         </ul>
       </li>
       <li class="role">
         <div class="role-head">
-          <h3>Security Governance Analyst, Analytics</h3>
-          <p class="meta"><span class="employer">OCC (Options Clearing Corporation)</span> · <time>Jul 2018 – Sep 2019</time></p>
+          <h3>Security Governance Analyst, Analytics <span class="employer">· OCC (Options Clearing Corporation)</span></h3>
+          <time>Jul 2018 – Sep 2019</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="grc" data-skills="nist-csf risk-assessment security-metrics">
             <p>Designed a Cyber Risk Metrics Index measuring enterprise risk across the NIST CSF and presented it to the Board of Directors; recognized with a Commitment to Excellence Award.</p>
             <p class="tags">
-<span class="tag tag-domain">GRC</span><span class="tag">NIST CSF</span><span class="tag">Risk Assessment</span><span class="tag">Security Metrics</span>            </p>
+<span class="pill d-grc">GRC</span><span class="tag">NIST CSF</span><span class="tag">Risk Assessment</span><span class="tag">Security Metrics</span>            </p>
           </li>
         </ul>
       </li>
       <li class="role">
         <div class="role-head">
-          <h3>Security Governance Consultant (contractor for OCC)</h3>
-          <p class="meta"><span class="employer">FDM Group</span> · <time>Aug 2017 – Jul 2018</time></p>
+          <h3>Security Governance Consultant (contractor for OCC) <span class="employer">· FDM Group</span></h3>
+          <time>Aug 2017 – Jul 2018</time>
         </div>
         <ul class="items">
           <li class="item" data-domains="grc" data-skills="nist-csf reg-sci">
             <p>Co-authored and maintained the Reg SCI System Security Plan, aligned to the NIST CSF.</p>
             <p class="tags">
-<span class="tag tag-domain">GRC</span><span class="tag">NIST CSF</span><span class="tag">Reg SCI</span>            </p>
+<span class="pill d-grc">GRC</span><span class="tag">NIST CSF</span><span class="tag">Reg SCI</span>            </p>
           </li>
         </ul>
       </li>
+      <li class="empty-state" hidden>No highlights match this filter.</li>
     </ol>
   </section>
 
   <section id="skills" aria-labelledby="skills-h">
-    <h2 id="skills-h">Skills</h2>
+    <div class="sec-head"><h2 id="skills-h">Skills</h2></div>
     <p class="note">Each number counts the highlights above (and projects) that show the skill in that domain.</p>
     <div class="matrix-scroll">
       <table class="matrix">
         <thead>
-          <tr><th scope="col">Skill</th><th scope="col">Security Architecture</th><th scope="col">Cloud Security</th><th scope="col">AI Security</th><th scope="col">GRC</th><th scope="col">Detection &amp; Response</th><th scope="col">Leadership</th></tr>
+          <tr><th scope="col">Skill</th><th scope="col" class="d-security-architecture">Security Architecture</th><th scope="col" class="d-cloud-security">Cloud Security</th><th scope="col" class="d-ai-security">AI Security</th><th scope="col" class="d-grc">GRC</th><th scope="col" class="d-detection-response">Detection &amp; Response</th><th scope="col" class="d-leadership">Leadership</th></tr>
         </thead>
         <tbody>
           <tr class="cat"><th scope="rowgroup" colspan="7">Security Architecture</th></tr>
@@ -406,7 +436,7 @@
   </section>
 
   <section id="certifications" aria-labelledby="certifications-h">
-    <h2 id="certifications-h">Certifications</h2>
+    <div class="sec-head"><h2 id="certifications-h">Certifications</h2></div>
     <ul class="cards">
       <li class="card">
         <h3>AWS Certified Cloud Practitioner</h3>
@@ -425,7 +455,7 @@
 
 
   <section id="education" aria-labelledby="education-h">
-    <h2 id="education-h">Education</h2>
+    <div class="sec-head"><h2 id="education-h">Education</h2></div>
     <ul class="cards">
       <li class="card">
         <h3>Master of Science, Applied Data Science (Analytics)</h3>
